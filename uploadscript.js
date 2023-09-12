@@ -3,6 +3,7 @@ listScript=async(n,c,d)=>{
     const i1=document.createElement('input')
     const i2=document.createElement('input')
     const i3=document.createElement('input')
+    posttemp.class="script-container"
     i1.type="button"
     i2.type="button"
     i3.type="button"
