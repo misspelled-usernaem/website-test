@@ -52,7 +52,9 @@ createPost=async()=>{
 if (document.URL==`https://${document.domain}/website-test/`){
     for (var key in localStorage){
         var value=localStorage.getItem(key)
-        listScript(value.name,'tyler',value.date)
+        if (typeof value!=='undefined'){
+            listScript(value.name,'tyler',value.date)
+        }
     }
 }
 if (document.URL==`https://${document.domain}/website-test/upload.html`){
