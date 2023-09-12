@@ -49,9 +49,10 @@ createPost=async()=>{
 
 
 if (document.URL==`https://${document.domain}/website-test/`){
-    localStorage.forEach(v=>{
+    for (var key in localStorage){
+        var value=localStorage.getItem(key)
         listScript(v.name,'tyler',v.date)
-    })
+    }
 }
 if (document.URL==`https://${document.domain}/website-test/upload.html`){
     const uploadbtn=document.getElementById('upload')
