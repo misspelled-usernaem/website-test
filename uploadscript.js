@@ -1,5 +1,3 @@
-const uploadbtn=document.getElementById('upload')
-
 listScript=async(n,c,d)=>{
     const posttemp=document.createElement('div')
     const i1=document.createElement('input')
@@ -49,10 +47,13 @@ createPost=async()=>{
     console.log('created')
 }
 
-uploadbtn.onclick=createPost
 
 if (document.URL==`${document.domain}/website-test/`){
     localStorage.forEach(v=>{
         listScript(v.name,'tyler',v.date)
     })
+}
+if (document.URL==`${document.domain}/website-test/upload.html`){
+    const uploadbtn=document.getElementById('upload')
+    uploadbtn.onclick=createPost
 }
