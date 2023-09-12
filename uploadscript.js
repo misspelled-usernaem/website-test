@@ -48,12 +48,12 @@ createPost=async()=>{
 }
 
 
-if (document.URL==`${document.domain}/website-test/`){
+if (document.URL==`https://${document.domain}/website-test/`){
     localStorage.forEach(v=>{
         listScript(v.name,'tyler',v.date)
     })
 }
-if (document.URL==`${document.domain}/website-test/upload.html`){
+if (document.URL==`https://${document.domain}/website-test/upload.html`){
     const uploadbtn=document.getElementById('upload')
     uploadbtn.onclick=createPost
 }
