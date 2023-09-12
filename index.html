@@ -1,74 +1,59 @@
-<!DOCTYPE html>
-<html >
-    <link href="./style.css" rel="stylesheet" />
-    <body>
-        <div class="top-bar">
-            <input
-            type="button"
-            class="top-bar-btn"
-            id="home-btn"
-            value="home">
+listScript=async(n,c,d)=>{
+    const posttemp=document.createElement('div')
+    const i1=document.createElement('input')
+    const i2=document.createElement('input')
+    const i3=document.createElement('input')
+    i1.type="button"
+    i2.type="button"
+    i3.type="button"
+    i1.class="script-redirect"
+    i2.class="script-redirect"
+    i3.class="script-redirect"
 
-            <input
-            type="button"
-            class="top-bar-btn"
-            id="scripts-btn"
-            value="scripts">
+    posttemp.appendChild(i1)
+    posttemp.appendChild(i2)
+    posttemp.appendChild(i3)
 
-            <input
-            type="button"
-            class="top-bar-btn"
-            id="settings-btn"
-            value="account">
-        </div>
-    </body>
-    <body>
-        <input
-        type="search"
-        class="script-search"
-        placeholder="search for script or id">
-        
-        <input
-        type="button"
-        class="upload-script"
-        id="upload-page"
-        value="upload"
-        onclick>
+    i1.id="name"
+    i1.value=n
+    
+    i2.id="creator"
+    i2.value=c
+    
+    i3.id="date"
+    i3.value=d
 
-        <div class="container" id="s-container">
+    document.getElementById('s-container').appendChild(posttemp)
+}
 
-            <div class="script-container">
-                <input
-                type="button"
-                class="script-redirect"
-                id="name"
-                value="script name">
-            
-                <input
-                type="button"
-                class="script-redirect"
-                id="creator"
-                value="creator">
-            
-                <input
-                type="button"
-                class="script-redirect"
-                id="date"
-                value="date">
-            
-            </div>
+createPost=async()=>{
+    const name=document.getElementById('name').value
+    //const by=document.getElementById('').value
+    const source=document.getElementById('source').value
+    const desc=document.getElementById('description').value
 
+    const date=new Date
+    const fdate=`${date.getUTCDate()}/${date.getUTCDay()} - ${date.getUTCFullYear()}`
 
-        </div>
-    </body>
-</html>
-
-<script>
-    document.title='scrips!'
-    const uploadPage=document.getElementById('upload-page')
-    uploadPage.onclick=async()=>{
-        location.assign(`${baseurl}/website-test/upload.html`)
+    const id=localStorage.length()+1
+    const save={
+        "name":name,
+        "date":fdate,
+        "source":source,
+        "creator":"dummy",
+        "description":desc
     }
-</script>
-<script src="./topbar.js"></script>
-<script src="./uploadscript.js"></script>
+    localStorage.setItem(toString(id),save)
+    console.log('created')
+}
+
+
+if (document.URL==`${document.domain}/website-test/`){
+    localStorage.forEach(v=>{
+        listScript(v.name,'tyler',v.date)
+    })
+}
+if (document.URL==`${document.domain}/website-test/upload.html`){
+    const uploadbtn=document.getElementById('upload')
+    uploadbtn.onclick=createPost
+}
