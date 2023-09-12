@@ -10,6 +10,12 @@ createPost=async()=>{
 
     const date=new Date
 
+    fetch('./scripts.json')
+    .then(resp=>resp.json())
+    .then(json=>{
+        console.log(json)
+    })
+    
 
     //c[0].value=name
     //c[1].value=by
