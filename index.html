@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+    <link href="./style.css" rel="stylesheet" />
+    <body>
+        <div class="top-bar">
+            <input
+            type="button"
+            class="top-bar-btn"
+            id="home-btn"
+            value="home">
+
+            <input
+            type="button"
+            class="top-bar-btn"
+            id="scripts-btn"
+            value="scripts">
+
+            <input
+            type="button"
+            class="top-bar-btn"
+            id="settings-btn"
+            value="account">
+        </div>
+    </body>
+    <body>
+        <input
+        type="search"
+        class="script-search"
+        placeholder="search for script or id">
+        
+        <input
+        type="button"
+        class="upload-script"
+        id="upload-page"
+        value="upload"
+        onclick>
+
+        <div class="container" id="s-container">
+
+            <div class="script-container">
+                <input
+                type="button"
+                class="script-redirect"
+                value="script name">
+                <input
+                type="button"
+                class="script-redirect"
+                id="creator"
+                value="creator">
+                <input
+                type="button"
+                class="script-redirect"
+                id="date"
+                value="date">
+            </div>
+            
+            
+
+
+        </div>
+    </body>
+</html>
+
+<script>
+    document.title='scrips!'
+    const uploadPage=document.getElementById('upload-page')
+    uploadPage.onclick=async()=>{
+        location.href=`file:///C:/Users/ist0923/OneDrive%20-%20Skellefte%C3%A5%20kommun/Desktop/JS/extension/upload.html`
+    }
+</script>
+<script src="./topbar.js"></script>
