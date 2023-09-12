@@ -10,11 +10,7 @@ listScript=async(n,c,d)=>{
     i1.class="script-redirect"
     i2.class="script-redirect"
     i3.class="script-redirect"
-
-    posttemp.appendChild(i1)
-    posttemp.appendChild(i2)
-    posttemp.appendChild(i3)
-
+    
     i1.id="name"
     i1.value=n
     
@@ -23,6 +19,10 @@ listScript=async(n,c,d)=>{
     
     i3.id="date"
     i3.value=d
+
+    posttemp.appendChild(i1)
+    posttemp.appendChild(i2)
+    posttemp.appendChild(i3)
 
     document.getElementById('s-container').appendChild(posttemp)
 }
