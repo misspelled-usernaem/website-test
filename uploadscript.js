@@ -35,7 +35,7 @@ createPost=async()=>{
     const date=new Date
     const fdate=`${date.getUTCDate()}/${date.getUTCDay()} - ${date.getUTCFullYear()}`
 
-    const id=localStorage.length()+1
+    const id=Object.keys(localStorage).length+1
     const save={
         "name":name,
         "date":fdate,
