@@ -2,7 +2,7 @@ const home=document.getElementById('home-btn')
 const scripts=document.getElementById('scripts-btn')
 const settings=document.getElementById('settings-btn')
 
-const baseurl=document.baseURI
+const baseurl=document.domain
 
 home.onclick=async()=>{
     location.href=`${baseurl}/index.html`
