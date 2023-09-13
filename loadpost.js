@@ -6,8 +6,10 @@ const post=localStorage.getItem(id)
 switch(typeof post){
     case 'null':
         console.log('failed to load')
+        break;
     case 'undefined':
         console.log('failed to load')
+        break;
     default:
         console.log('loaded')
 }
