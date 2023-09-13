@@ -1,7 +1,7 @@
 const hash=window.location.hash
 const isValid=hash.includes('id=')
 const id=hash.split('id=')[1]
-const post=localStorage.getItem(`id-${id}`)
+const post=localStorage.getItem(id)
 
 const header=document.getElementById('header')
 const copy=document.getElementById('copy')
@@ -16,7 +16,7 @@ switch(typeof post){
         console.log('failed to load')
         break;
     default:
-        document.title=`Post: ${id}`
+        document.title=`Post: ${id.split('-')[1]}`
         var content=JSON.parse(post)
         header.innerText=`${content.name} - ${content.creator}`
         sourceCode.value=content.source
