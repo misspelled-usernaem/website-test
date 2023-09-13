@@ -8,12 +8,12 @@ class account {
 
 console.log(window.location.pathname)
 
-listScript=async(n,c,d)=>{
+listScript=async(id,n,c,d)=>{
     const posttemp=document.createElement('div')
     const i1=document.createElement('input')
     const i2=document.createElement('input')
     const i3=document.createElement('input')
-    posttemp.class="script-container"
+    posttemp.setAttribute('class',"script-container")
     i1.type="button"
     i2.type="button"
     i3.type="button"
@@ -23,6 +23,9 @@ listScript=async(n,c,d)=>{
     
     i1.id="name"
     i1.value=n
+    i1.onclick=async()=>{
+        window.location.pathname=`/website-test/post.html#id=${id}`
+    }
     
     i2.id="creator"
     i2.value=c
@@ -63,8 +66,8 @@ switch(window.location.pathname){
         for (var key in localStorage){
             var value=localStorage.getItem(key)
             console.log(value)
-            if (typeof value!=='undefined'){
-                listScript(value['name'],'tyler',value['date'])
+            if (typeof value!=='null'){
+                listScript(key,value['name'],'tyler',value['date'])
             }
         }
         break;
