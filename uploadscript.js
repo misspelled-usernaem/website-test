@@ -1,3 +1,13 @@
+class account {
+    constructor(id,name){
+        this.id=id
+        this.name=name
+        this.latestpost=0
+    }
+}
+
+console.log(window.location.pathname)
+
 listScript=async(n,c,d)=>{
     const posttemp=document.createElement('div')
     const i1=document.createElement('input')
@@ -7,9 +17,9 @@ listScript=async(n,c,d)=>{
     i1.type="button"
     i2.type="button"
     i3.type="button"
-    i1.class="script-redirect"
-    i2.class="script-redirect"
-    i3.class="script-redirect"
+    i1.setAttribute('class',"script-redirect")
+    i2.setAttribute('class',"script-redirect")
+    i3.setAttribute('class',"script-redirect")
     
     i1.id="name"
     i1.value=n
@@ -45,19 +55,21 @@ createPost=async()=>{
         "description":desc
     }
     localStorage.setItem(toString(id),save)
-    console.log('created')
+    alert('Your post has been created!')
 }
 
-if (document.URL==`https://${document.domain}/website-test/`){
-    for (var key in localStorage){
-        var value=localStorage.getItem(key)
-        console.log(value)
-        if (typeof value!=='undefined'){
-            listScript(value['name'],'tyler',value['date'])
+switch(window.location.pathname){
+    case '/website-test/':
+        for (var key in localStorage){
+            var value=localStorage.getItem(key)
+            console.log(value)
+            if (typeof value!=='undefined'){
+                listScript(value['name'],'tyler',value['date'])
+            }
         }
-    }
-}
-if (document.URL==`https://${document.domain}/website-test/upload.html`){
-    const uploadbtn=document.getElementById('upload')
-    uploadbtn.onclick=createPost
+        break;
+    case '/website-test/upload.html':
+        const uploadbtn=document.getElementById('upload')
+        uploadbtn.onclick=createPost
+        break;
 }
