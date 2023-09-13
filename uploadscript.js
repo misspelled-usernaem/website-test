@@ -66,8 +66,15 @@ switch(window.location.pathname){
         for (var key in localStorage){
             var value=localStorage.getItem(key)
             console.log(value)
-            if (typeof value!=='null'){
-                listScript(key,value['name'],'tyler',value['date'])
+            switch(typeof value){
+                case 'null':
+                    console.log('fail')
+                    break
+                case 'undefined':
+                    console.log('fail')
+                    break
+                default:
+                    listScript(key,value['name'],'tyler',value['date'])
             }
         }
         break;
