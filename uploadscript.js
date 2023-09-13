@@ -1,5 +1,3 @@
-const { json } = require("express")
-
 class account {
     constructor(id,name){
         this.id=id
