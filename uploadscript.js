@@ -23,9 +23,9 @@ listScript=async(id,n,c,d)=>{
     
     i1.id="name"
     i1.value=n
-    i1.onclick=async()=>{
+    i1.setAttribute('onclick',async()=>{
         window.location.pathname=`/website-test/post.html#id=${id}`
-    }
+    })
     
     i2.id="creator"
     i2.value=c
