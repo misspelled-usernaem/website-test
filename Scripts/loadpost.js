@@ -1,6 +1,12 @@
 const hash=window.location.hash
 const isValid=hash.includes('id=')
 const id=hash.split('id=')[1]
+const displayLogFile=()=>{
+    fs.readFile("../Storage.log", "utf8", (err, file) => {
+      return JSON.parse(file);
+    });
+  };
+
 const post=localStorage.getItem(id)
 
 const header=document.getElementById('header')

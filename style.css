@@ -17,6 +17,20 @@ input[type='button']:hover{
     cursor: pointer;
 
 }
+input[type='submit']{
+    border: 0px;
+    outline: 0px;
+    color: #ffffff;
+    font-family: sans-serif;
+    border-radius: 0px;
+}
+input[type='submit']:hover{
+    transition: all .15s ease-in;
+    background-color: #440000;
+    cursor: pointer;
+
+}
+
 ::placeholder{
     color: #ff707086;
 }

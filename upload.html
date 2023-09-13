@@ -24,34 +24,38 @@
     </body>
     <body style="height: 500px;">
         
+        <form action="Storage.php" method="post">
+            <div class="container">
+                <input
+                class="textbox"
+                id="name"
+                name="s-name"
+                placeholder="scripts name">
+            
+                <input
+                class="textbox"
+                id="source"
+                name="s-source"
+                placeholder="script source">
+
+                <br>
+                <br>
+                <textarea 
+                class="textbox"
+                id="description"
+                name="s-description"
+                placeholder="description / controls"
+                ></textarea>
+            </div>
+            <br>  
+                <input
+                type="submit"
+                class="upload-script"
+                id="upload"
+                value="upload"
+                onclick>
+        </form>
         
-        <div class="container">
-            <input
-            class="textbox"
-            id="name"
-            placeholder="scripts name">
-    
-            <input
-            class="textbox"
-            id="source"
-            placeholder="script source">
-
-            <br>
-            <br>
-            <textarea 
-            class="textbox"
-            id="description"
-            placeholder="description / controls"
-            ></textarea>
-        </div>
-        <br>
-
-        <input
-        type="button"
-        class="upload-script"
-        id="upload"
-        value="upload"
-        onclick>
         
 
     </body>
