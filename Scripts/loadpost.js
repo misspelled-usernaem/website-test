@@ -6,7 +6,7 @@ const post=localStorage.getItem(id)
 const header=document.getElementById('header')
 const copy=document.getElementById('copy')
 const sourceCode=document.getElementById('source')
-const desc=document.getElementById('description-box')
+const desc=document.getElementById('description')
 
 copy.onclick=async()=>{
     sourceCode.select()
@@ -26,6 +26,17 @@ switch(typeof post){
         document.title=`Post: ${id.split('-')[1]}`
         var content=JSON.parse(post)
         header.innerText=`${content.name} - ${content.creator}`
-        sourceCode.value=content.source
+        let formatted=content.source
+        if (formatted.includes('***')){
+            formatted.replace('***',`game:GetService("Players")["accountName"]`)
+        }
+        if (formatted.includes('**')){
+            formatted.replace('**',`"accountName"`)
+        }
+        if (formatted.includes('*')){
+            formatted.replace('*',`"accountID"`)
+        }
+        sourceCode.value=formatted
         desc.value=content.description
 }
+
