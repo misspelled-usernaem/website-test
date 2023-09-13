@@ -60,6 +60,8 @@ createPost=async()=>{
     }
     localStorage.setItem(`id-${id}`,JSON.stringify(save))
     alert('Your post has been created!')
+    location.hash=`#id=id-${id}`
+    location.pathname='/website-test/post.html'
 }
 
 switch(window.location.pathname){

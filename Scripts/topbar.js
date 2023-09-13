@@ -5,11 +5,14 @@ const settings=document.getElementById('settings-btn')
 
 
 home.onclick=async()=>{
-    window.location.pathname='/website-test/'
+    location.pathname='/website-test/'
+    location.hash=''
 }
 scripts.onclick=async()=>{
-    window.location.pathname='/website-test/'
+    location.pathname='/website-test/'
+    location.hash=''
 }
 settings.onclick=async()=>{
-    window.location.pathname='/website-test/account.html'
+    location.pathname='/website-test/account.html'
+    location.hash=''
 }
