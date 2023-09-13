@@ -19,12 +19,14 @@ listScript=async(id,n,c,d)=>{
     i3.setAttribute('class',"script-redirect")
     
     clicked=async()=>{
-        window.location.pathname=`/website-test/post.html#id=${id}`
+        window.location.hash=`#id=${id}`
+        window.location.pathname=`/website-test/post.html`
+        
     }
 
     i1.id="name"
     i1.value=n
-    i1.setAttribute('onclick',clicked)
+    i1.onclick=clicked
     
     i2.id="creator"
     i2.value=c
