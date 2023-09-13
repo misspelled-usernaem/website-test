@@ -74,7 +74,11 @@ switch(window.location.pathname){
                     console.log('fail')
                     break
                 default:
+                    try{
                     listScript(key,value['name'],'tyler',value['date'])
+                    }catch{
+                        console.log(key)
+                    }
             }
         }
         break;
