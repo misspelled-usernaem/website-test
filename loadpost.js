@@ -11,5 +11,6 @@ switch(typeof post){
         console.log('failed to load')
         break;
     default:
+        document.title=`Post: ${id}`
         console.log('loaded')
 }

@@ -49,7 +49,7 @@ createPost=async()=>{
     const date=new Date
     const fdate=`${date.getUTCDate()}/${date.getUTCDay()} - ${date.getUTCFullYear()}`
 
-    const id=Object.keys(localStorage).length+1
+    const id=(Object.keys(localStorage).length+1).toString()
     const save={
         "name":name,
         "date":fdate,
@@ -57,7 +57,7 @@ createPost=async()=>{
         "creator":"dummy",
         "description":desc
     }
-    localStorage.setItem(toString(id),save)
+    localStorage.setItem(id,save)
     alert('Your post has been created!')
 }
 
