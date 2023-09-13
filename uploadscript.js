@@ -5,9 +5,6 @@ class account {
         this.latestpost=0
     }
 }
-
-console.log(window.location.pathname)
-
 listScript=async(id,n,c,d)=>{
     const posttemp=document.createElement('div')
     const i1=document.createElement('input')
