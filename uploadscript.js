@@ -1,3 +1,5 @@
+const { json } = require("express")
+
 class account {
     constructor(id,name){
         this.id=id
@@ -21,11 +23,13 @@ listScript=async(id,n,c,d)=>{
     i2.setAttribute('class',"script-redirect")
     i3.setAttribute('class',"script-redirect")
     
+    clicked=async()=>{
+        window.location.pathname=`/website-test/post.html#id=${id}`
+    }
+
     i1.id="name"
     i1.value=n
-    i1.setAttribute('onclick',async()=>{
-        window.location.pathname=`/website-test/post.html#id=${id}`
-    })
+    i1.setAttribute('onclick',clicked)
     
     i2.id="creator"
     i2.value=c
@@ -49,7 +53,7 @@ createPost=async()=>{
     const date=new Date
     const fdate=`${date.getUTCDate()}/${date.getUTCDay()} - ${date.getUTCFullYear()}`
 
-    const id=(Object.keys(localStorage).length+1).toString()
+    const id=(localStorage.length+1).toString()
     const save={
         "name":name,
         "date":fdate,
@@ -57,14 +61,14 @@ createPost=async()=>{
         "creator":"dummy",
         "description":desc
     }
-    localStorage.setItem(id,save)
+    localStorage.setItem(`id-${id}`,JSON.stringify(save))
     alert('Your post has been created!')
 }
 
 switch(window.location.pathname){
     case '/website-test/':
         for (var key in localStorage){
-            var value=localStorage.getItem(key)
+            var value=JSON.parse(localStorage.getItem(key))
             console.log(value)
             switch(typeof value){
                 case 'null':
@@ -75,7 +79,7 @@ switch(window.location.pathname){
                     break
                 default:
                     try{
-                    listScript(key,value['name'],'tyler',value['date'])
+                        listScript(key,value['name'],'tyler',value['date'])
                     }catch{
                         console.log(key)
                     }

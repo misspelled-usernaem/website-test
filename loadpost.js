@@ -1,7 +1,7 @@
 const hash=window.location.hash
 const isValid=hash.includes('id=')
 const id=hash.split('id=')[1]
-const post=localStorage.getItem(id)
+const post=localStorage.getItem(`id-${id}`)
 
 switch(typeof post){
     case 'null':
