@@ -48,12 +48,12 @@ createPost=async()=>{
     console.log('created')
 }
 
-
 if (document.URL==`https://${document.domain}/website-test/`){
     for (var key in localStorage){
         var value=localStorage.getItem(key)
+        console.log(value)
         if (typeof value!=='undefined'){
-            listScript(value.name,'tyler',value.date)
+            listScript(value['name'],'tyler',value['date'])
         }
     }
 }
